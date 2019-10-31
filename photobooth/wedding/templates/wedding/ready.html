@@ -1,0 +1,15 @@
+{% load static %}
+<html>
+<link rel="stylesheet" type="text/css" href="{% static 'wedding/style.css' %}">
+
+<div class="background">
+  <h1>Bild Nummer 4:</h1>
+
+  <form action="{% url 'wedding:countdown' %}" method="post">
+    {% csrf_token %}
+    <button class="btn">Foto schießen!</button>
+  </form>
+
+</div>
+
+</html>

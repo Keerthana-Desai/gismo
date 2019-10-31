@@ -1,0 +1,14 @@
+{% load static %}
+<html>
+<link rel="stylesheet" type="text/css" href="{% static 'wedding/style.css' %}">
+
+<div class="background">
+  <h2>Bild preview.</h2>
+  <form action="{% url 'wedding:ready' %}" method="post">
+    {% csrf_token %}
+    <button class="btn">Nächstes Bild</button>
+  </form>
+
+</div>
+
+</html>

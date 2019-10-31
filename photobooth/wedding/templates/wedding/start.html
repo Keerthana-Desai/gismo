@@ -1,0 +1,15 @@
+{% load static %}
+<html>
+<link rel="stylesheet" type="text/css" href="{% static 'wedding/style.css' %}">
+
+<div class="background">
+  <h2>Es werden vier Bilder nacheinander gemacht <br>
+  und dann wird eine Collage erstellt.</h2>
+  <form action="{% url 'wedding:ready' %}" method="post">
+    {% csrf_token %}
+    <button class="btn">Start</button>
+  </form>
+
+</div>
+
+</html>

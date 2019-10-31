@@ -1,0 +1,25 @@
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.background {
+  /* The image used */
+  background-image: url("backgrounds/background_1.jpg");
+
+  /* Center and scale the image nicely */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  position: center;
+  color: black;   /* font-color */
+  font-size:6vw;
+}

@@ -1,0 +1,26 @@
+{% load static %}
+{% get_static_prefix as STATIC_URL %}
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="{% static 'wedding/gallery.css' %}" media="screen">
+	</head>
+  
+	<body>
+
+		<div id="gallery">
+			<ul>
+        {% for pic in gallery_list.picture_set.all %}
+				<li>
+					<input type="checkbox" id="img-{{forloop.counter}}">
+					<label for="img-{{forloop.counter}}"><img id="img{{forloop.counter}}" src="{{STATIC_URL}}wedding/collages/{{pic.picture_name}}.jpg"></label>
+					<div class="overlay"></div>
+				</li>
+        {% endfor %}
+
+			<ul>
+
+		</div>
+
+	</body>
+</html>

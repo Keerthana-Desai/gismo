@@ -1,0 +1,54 @@
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.background {
+  /* The image used */
+  background-image: url("backgrounds/background_1.jpg");
+
+  /* Center and scale the image nicely */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555; /* Button background */
+  color: white; /* font-color */
+  font-size: 5vw;
+  width: 40vw;
+  padding: 1vw 2vw;
+  border: none;
+  cursor: pointer;
+  border-radius: 1vw;
+  outline-style: none; /* blue frame disappear */
+}
+
+.btn:hover {
+  background-color: black;
+}
+
+h1 {
+  position: absolute;
+  top: 20%;
+  color: black;   /* font-color */
+  font-size:6vw;
+}
+
+h2 {
+  position: absolute;
+  top: 20%;
+  color: black;   /* font-color */
+  font-size:4vw;
+}

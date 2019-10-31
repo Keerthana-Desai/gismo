@@ -1,0 +1,41 @@
+{% load static %}
+<html>
+<link rel="stylesheet" type="text/css" href="{% static 'wedding/countdown.css' %}">
+
+<body onload="countdown()">
+<div class="background">
+    <p id="countdown-number"> </p>
+</div>
+
+<form action="{% url 'wedding:preview' %}" method="post">
+  {% csrf_token %}
+  <button class="preview" id="preview" style="display: none;">
+</form>
+</body>
+
+</html>
+
+
+
+<!-- JavaScript part for the button -->
+<script type="text/javascript">
+
+  var seconds = 6; // Total seconds to wait
+
+  function countdown() {
+    seconds = seconds - 1; // Deswegen 6 sec
+    if (seconds < 1) {
+       seconds = 6;
+       document.getElementById("countdown-number").innerHTML = "Lächeln!!!";
+        // After countdown
+        // TODO: Capture image function
+        document.getElementById("preview").click();
+
+    } else {
+        // Update button value
+        document.getElementById("countdown-number").innerHTML = seconds;
+        // Count down using javascript
+        window.setTimeout("countdown()", 1000);
+    }
+  }
+</script>
