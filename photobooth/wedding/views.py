@@ -5,13 +5,29 @@ from .models import Collage, Picture
 import os
 import time
 
-gallery_list = ['bild1',
-                'bild2',
-                'bild2',
-                'bild2',
-                'bild3',]
-for i in range(1):
-    gallery_list.append('bild4')
+gallery_list = ['collage1',
+#                'bild2',
+#                'bild2',
+#                'bild2',
+#                'bild3',
+#                'bild1',
+#                'bild2',
+#                'bild2',
+#                'bild2',
+#                'bild3',
+#                'bild1',
+#                'bild2',
+#                'bild2',
+#                'bild2',
+#                'bild3',
+#                'bild1',
+#                'bild2',
+#                'bild2',
+#                'bild2',
+#                'bild3',
+                ]
+for i in range(35):
+    gallery_list.append('collage' + str(i+1))
 Picture.objects.all().delete()
 Collage.objects.all().delete()
 
