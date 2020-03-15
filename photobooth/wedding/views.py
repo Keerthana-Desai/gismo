@@ -4,6 +4,13 @@ from .models import Collage, Picture
 
 import os
 import time
+import sys
+
+folder_name = "test"
+triggerCommand = "gphoto2 --capture-image-and-download"
+
+nb_images = 1
+listofimages = []
 
 gallery_list = ['collage1',
 #                'bild2',
@@ -39,17 +46,39 @@ for i in range(len(gallery_list)):
                         picture_url = gallery_list[i])
 
 def start(request):
+    os.system("mkdir " + str(folder_name))
+
+    global nb_images
+    nb_images = 0
+
     return render(request, 'wedding/start.html')
 
 def ready(request):
-    #os.system("mkdir test")
-    return render(request, 'wedding/ready.html')
+
+    global nb_images
+    if nb_images < 4:
+        return render(request, 'wedding/ready.html')
+    else:
+        nb_images = 0
+        sys.stdout.write("Collage wird erstellt!\n")
+        return render(request, 'wedding/ready.html')
 
 def countdown(request):
     return render(request, 'wedding/countdown.html')
 
 def preview(request):
-    time.sleep(5)
+
+    #os.system(triggerCommand)
+    #time.sleep(1)
+
+    global nb_images
+    nb_images += 1
+
+    sys.stdout.write("Bild " + str(nb_images) +  " wurde geschossen\n")
+
+    global c
+    c.picture_set.create(picture_name = "bild" + str(nb_images),
+                         picture_url = "bild" + str(nb_images))
     return render(request, 'wedding/preview.html')
 
 def collage(request):
